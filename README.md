@@ -1,5 +1,7 @@
 # Memory Game Project
 
+The Memory Game Project is browser-based card matching game
+
 ## Table of Contents
 
 * [Instructions](#instructions)

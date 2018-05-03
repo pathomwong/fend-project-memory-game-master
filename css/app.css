@@ -73,6 +73,10 @@ h1 {
   border: 1px solid;
 }
 
+/*
+* No transition or animate for epic mode, So it don't mess up x,y of element,
+* when calculate the position for swaping
+*/
 .noeffect{
   transition: :none;
   animation: none;

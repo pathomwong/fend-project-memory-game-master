@@ -47,6 +47,10 @@ function shuffle(array) {
     return array;
 }
 
+/**
+* @description reposponed when the card is click
+* @param {event} event - event from the element
+*/
 const cardclick = (event) => {
   if(!timerStart){
     running =true;
@@ -101,6 +105,9 @@ const cardclick = (event) => {
   }
 }
 
+/**
+* @description check if player win
+*/
 function checkWin(){
   console.log('match#'+matchNum);
   if(matchNum === 8){
@@ -113,10 +120,9 @@ function checkWin(){
   }
 }
 
-$('.modal .close').click(function(){
-  $('#win-modal').css("display","none");
-});
-
+/**
+* @description count player moves
+*/
 function countMove(){
   moveCounter++;
   $('.moves').html(moveCounter);
@@ -132,6 +138,9 @@ function countMove(){
   }
 }
 
+/**
+* @description time player
+*/
 function timer(){
   if(running == true){
     setTimeout(function(){
@@ -144,6 +153,9 @@ function timer(){
   }
 }
 
+/**
+* @description reset timer
+*/
 function resetTimer(){
   running =false;
   timerStart = false;
@@ -151,6 +163,9 @@ function resetTimer(){
   $('#time').html('0m:0s');
 }
 
+/**
+* @description reset the deck
+*/
 function resetDeck(){
   $('.deck li').remove();
   cardGen(cardlist);
@@ -165,6 +180,9 @@ function resetDeck(){
 
 }
 
+/**
+* @description swap the cards for epic mode
+*/
 function swapCard(){
   let card = $(".card");
   let cardlist = [...card]
@@ -192,11 +210,17 @@ function swapCard(){
   }
 }
 
+/**
+* @description swap background color on the level selector
+*/
 function changeToolColorBackground(level){
     $('#level li').css('background-color', '');
     level.css('background-color', '#7F8C8D');
 }
 
+/**
+* @description card clicking event capture
+*/
 deck.on('click', 'li', cardclick);
 $('#normal').click(function(){
   level = 'normal';
@@ -204,16 +228,29 @@ $('#normal').click(function(){
   changeToolColorBackground($(this));
 });
 
+/**
+* @description epic mode clicking event capture
+*/
 $('#epic').click(function(){
   level = 'epic';
   $('.card').addClass('relative');
   changeToolColorBackground($(this));
 });
 
+/**
+* @description restart game clicking event capture
+*/
 $('.restart').click(function(){
   resetTimer();
   resetDeck();
   $('#level').removeClass("noevent");
+});
+
+/**
+* @description click event when player close modal
+*/
+$('.modal .close').click(function(){
+  $('#win-modal').css("display","none");
 });
 
  cardGen(cardlist);
