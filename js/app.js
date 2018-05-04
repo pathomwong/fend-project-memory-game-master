@@ -12,8 +12,7 @@ let level = 'normal'
 * Caching the element
 */
 const deck = $('.deck');
-const moves = $('.moves');
-const card = $('.card');
+
 /*
  * Create a list that holds all of your cards
  */
@@ -113,7 +112,7 @@ function checkWin(){
   console.log('match#'+matchNum);
   if(matchNum === 8){
     running = false;
-    card.addClass("win-spin");
+    $('.card').addClass("win-spin");
     $('#win-modal').css("display","block");
     $('#win-star').html($('.stars').html());
     $('#win-move').html('you use '+  moveCounter + ' moves');
@@ -126,7 +125,7 @@ function checkWin(){
 */
 function countMove(){
   moveCounter++;
-  moves.html(moveCounter);
+  $('.moves').html(moveCounter);
 
   // if(moveCounter === 30){
   //   $('#star1').addClass("star-grey");
@@ -135,7 +134,7 @@ function countMove(){
     $('#star2').addClass("star-grey");
   }
   if(moveCounter === 10){
-     $('#star3').addClass("star-grey");
+    $('#star3').addClass("star-grey");
   }
 }
 
@@ -171,12 +170,12 @@ function resetDeck(){
   $('.deck li').remove();
   cardGen(cardlist);
   moveCounter = 0;
-  moves.html(moveCounter);
+  $('.moves').html(moveCounter);
   cardclick.prevCard = null;
   cardclick.checker = true;
   $('.fa').removeClass("star-grey");
   if(level === 'epic'){
-    card.addClass('relative');
+    $('.card').addClass('relative');
   }
 
 }
@@ -189,8 +188,8 @@ function swapCard(){
   let cardlist = [...card]
   let id =[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15];
   id = shuffle(id);
-  card.css( "transition", "none" );
-  card.css( "animation", "none" );
+  $('.card').css( "transition", "none" );
+  $('.card').css( "animation", "none" );
   for(let i=0;i<id.length;i =i+2){
     let firstCard = $('#'+id[i]);
     let secondCard = $('#'+id[i+1]);
@@ -225,7 +224,7 @@ function changeToolColorBackground(level){
 deck.on('click', 'li', cardclick);
 $('#normal').click(function(){
   level = 'normal';
-  card.removeClass('relative');
+  $('.card').removeClass('relative');
   changeToolColorBackground($(this));
 });
 
@@ -234,7 +233,7 @@ $('#normal').click(function(){
 */
 $('#epic').click(function(){
   level = 'epic';
-  card.addClass('relative');
+  $('.card').addClass('relative');
   changeToolColorBackground($(this));
 });
 
