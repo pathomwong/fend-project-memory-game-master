@@ -133,9 +133,9 @@ function countMove(){
   if(moveCounter === 20){
     $('#star2').addClass("star-grey");
   }
-  if(moveCounter === 10){
-    $('#star3').addClass("star-grey");
-  }
+  // if(moveCounter === 10){
+  //   $('#star3').addClass("star-grey");
+  // }
 }
 
 /**
