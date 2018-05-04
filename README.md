@@ -4,9 +4,17 @@ The Memory Game Project is browser-based card matching game
 
 ## Table of Contents
 
+* [Installation of the Game](#installation)
 * [How to Play the Game](#howtoplay)
 * [Instructions](#instructions)
 * [Contributing](#contributing)
+
+## <a name="installation">Installation of the Game
+  Clone This git repository
+  ```
+  git clone https://github.com/pathomwong/fend-project-memory-game-master.git
+  ```
+  This Game is a web-base game, Installation is not needed, just open index.html with your browser.
 
 ## <a name="howtoplay"></a>How to Play the Game
   * Choose mode you want to play. (Normal mode or Epic Mode)
