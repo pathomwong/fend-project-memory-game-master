@@ -10,10 +10,11 @@ The Memory Game Project is browser-based card matching game
 
 ## <a name="howtoplay"></a>How to Play the Game
   * Choose mode you want to play. (Normal mode or Epic Mode)
-  * Click on the first card you want
+  * Click any two cards.
   * Click the second cards
-    * try to choose/guess the second card that match with first card that you Choose
-  * Repeat the process until you match all the card and you won!
+    * Try to choose/guess the second card that match with first card that you Choose
+  * If they don't match, Remember what was on each card and where it was.
+  * Repeat the process until all the cards have been matched and you won!
 
 ## Instructions
 
